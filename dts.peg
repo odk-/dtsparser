@@ -1,6 +1,6 @@
 package main
 
-import "github.com/Archs/dtsparser/dts"
+import "github.com/odk-/dtsparser/dts"
 
 type Parser Peg {
 	dts.DTS
