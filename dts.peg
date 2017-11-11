@@ -82,7 +82,7 @@ EnumIdentifier
 
 EnumBody
 	<- block_start
-			AssignmentDifinition (and AssignmentDifinition)*
+			Value (and Value)*
 	   block_end
 
 ObjDeclaration
@@ -106,7 +106,7 @@ AssignmentDeclaration
 	<- AssignmentDifinition end
 
 AssignmentDifinition
-	<- assignmentModifier? Identifier? equals AssignmentValue
+	<- assignmentModifier? Identifier? equals? AssignmentValue
 
 assignmentModifier
 	<- (('declare' / 'export' / 'private' / 'static' 
@@ -257,7 +257,7 @@ modifier
 	    / 'import' / "var" / "function") space)+
 
 fakeIdentifier
-	<- ([[A-Z]]/[_.$'"]) ([[A-Z]]/[0-9]/[_?.$<>'"])*
+	<- ([[A-Z]]/[_.$'"]) ([[A-Z]]/[0-9]/[-_?.$<>'"])*
 
 Identifier
 	<- ([[A-Z]]/[_.$]) ([[A-Z]]/[0-9]/[_?.$])*
